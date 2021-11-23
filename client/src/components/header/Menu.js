@@ -9,8 +9,10 @@ const Menu = () => {
   const navLinks = [
     { label: "Home", path: "/" },
     { label: "Message",  path: "/message" },
-    { label: "Test 1", path: "/test2" },
-    { label: "Test 2",  path: "/test1" },
+    //created pages for news and adds
+    { label: "News", path: "/news" },
+    { label: "Adds",  path: "/adds" },
+    { label: "Feeds",  path: "/feeds" },
     // { label: "Discover", icon: "explore", path: "/discover" },
   ];
 
