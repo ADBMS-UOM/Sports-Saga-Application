@@ -1,6 +1,6 @@
 .header{
     width: 100%;
-    position: sticky;
+    position: fixed;
     top:0;
     left: 0;
     z-index: 2;
@@ -19,7 +19,7 @@
 } 
 
 .header .logo img{
-    width: 5rem;
+    width: 4rem;
     margin-right: 1rem;
     margin-left: 3rem;
   }

@@ -38,6 +38,7 @@ code {
   width: 100%;
   min-height: 100vh;
   margin: auto;
+  padding-top: 5rem;
 }
 
 img {
