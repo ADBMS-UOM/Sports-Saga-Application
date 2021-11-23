@@ -9,8 +9,8 @@ import LoadIcon from "../images/loading.gif";
 let scroll = 0;
 
 const Advertisement = () => {
-  const { homePosts } = useSelector((state) => state);
-
+  const { homePosts, auth  } = useSelector((state) => state);
+ 
   window.addEventListener("scroll", () => {
     if (window.location.pathname === "/") {
       scroll = window.pageYOffset;
@@ -28,8 +28,8 @@ const Advertisement = () => {
       
     <div className="home row mx-0">
       <div className="col-md-12">
-        <AddsStatus />
-
+      {auth.user.role === "admin"?   <AddsStatus /> :null }
+      
         {homePosts.loading ? (
           <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
         ) : homePosts.result === 0 && homePosts.posts.length === 0 ? (

@@ -4,6 +4,7 @@ import { GLOBALTYPES } from "../redux/actions/globalTypes";
 import { createPost, updatePost } from "../redux/actions/postAction";
 import Icons from "./Icons";
 import { imageShow, videoShow } from "../utils/mediaShow";
+import { createAd, updateAd } from "../redux/actions/adAction";
 
 const StatusModal = () => {
   const { auth, theme, status, socket } = useSelector((state) => state);
@@ -84,11 +85,23 @@ const StatusModal = () => {
         payload: { error: "Please add your photo." },
       });
 
-    if (status.onEdit) {
-      dispatch(updatePost({ content, images, auth, status }));
+    if (window.location.pathname === "/advertiesment") {
+      if (status.onEdit) {
+        dispatch(updateAd({ content, images, auth, status }));
+      } else {
+        dispatch(createAd({ content, images, auth, socket }));
+      }
+      console.log("created add");
     } else {
-      dispatch(createPost({ content, images, auth, socket }));
+      if (status.onEdit) {
+        dispatch(updatePost({ content, images, auth, status }));
+      } else {
+        dispatch(createPost({ content, images, auth, socket }));
+      }
+      console.log("created post")
+
     }
+
 
     setContent("");
     setImages([]);
