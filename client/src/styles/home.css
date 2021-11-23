@@ -24,6 +24,10 @@
 .posts .card{
     box-shadow: 0 0 4px #ddd;
 }
+
+.posts .card{
+    box-shadow: 0 0 4px #ddd;
+}
 /* --------- Post Card Header --------- */
 .posts .card_header{
     display: flex;

@@ -24,11 +24,10 @@ import SocketClient from "./SocketClient";
 import { getNotifies } from "./redux/actions/notifyAction";
 import Peer from "peerjs";
 
-import News from './pages/news'
-import Adds from './pages/adds'
+
 
 function App() {
-  const { auth, status, modal, call } = useSelector((state) => state);
+  const { auth, status, modal, userType } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {

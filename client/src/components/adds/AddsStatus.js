@@ -1,9 +1,10 @@
+
 import React from "react";
 import Avatar from "../Avatar";
 import { useSelector, useDispatch } from "react-redux";
 import { GLOBALTYPES } from "../../redux/actions/globalTypes";
 
-const Status = () => {
+const AddsStatus = () => {
   const { auth, userType } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -13,7 +14,12 @@ const Status = () => {
 
       <button
         className="statusBtn flex-fill"
-        onClick={() => dispatch({ type: GLOBALTYPES.STATUS, payload: true })}
+        // {userType === "user"? }
+        onClick={
+          auth.user.role === "admin"
+            ? () => dispatch({ type: GLOBALTYPES.STATUS, payload: true })
+            : null
+        }
       >
         {auth.user.username}, what are you thinking?
       </button>
@@ -21,4 +27,4 @@ const Status = () => {
   );
 };
 
-export default Status;
+export default AddsStatus;
