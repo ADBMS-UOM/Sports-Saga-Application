@@ -74,8 +74,9 @@ function App() {
 
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
+      <div className="nav-bar"> {auth.token && <Header />}</div>
         <div className="main">
-          {auth.token && <Header />}
+        
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}
