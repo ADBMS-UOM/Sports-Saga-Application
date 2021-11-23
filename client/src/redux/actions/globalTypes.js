@@ -8,7 +8,8 @@ export const GLOBALTYPES = {
     ONLINE: 'ONLINE',
     OFFLINE: 'OFFLINE',
     CALL: 'CALL',
-    PEER: 'PEER'
+    PEER: 'PEER',
+    USER_TYPE: "USER_TYPE",
 }
 
 export const EditData = (data, id, post) => {
