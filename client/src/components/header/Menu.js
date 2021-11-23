@@ -7,8 +7,10 @@ import Avatar from "../Avatar";
 
 const Menu = () => {
   const navLinks = [
-    { label: "Home", icon: "home", path: "/" },
-    { label: "Message", icon: "near_me", path: "/message" },
+    { label: "Home", path: "/" },
+    { label: "Message",  path: "/message" },
+    { label: "Test 1", path: "/test2" },
+    { label: "Test 2",  path: "/test1" },
     // { label: "Discover", icon: "explore", path: "/discover" },
   ];
 
@@ -26,7 +28,7 @@ const Menu = () => {
         {navLinks.map((link, index) => (
           <li className={`nav-item px-2 ${isActive(link.path)}`} key={index}>
             <Link className="nav-link" to={link.path}>
-              <span className="material-icons">{link.icon}</span>
+              <span >{link.label}</span>
             </Link>
           </li>
         ))}

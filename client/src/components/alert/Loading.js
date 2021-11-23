@@ -8,7 +8,7 @@ const Loading = () => {
             <svg width="205" height="250" viewBox="0 0 40 50">
                 <polygon stroke="#81cddd" strokeWidth="1" fill="none"
                 points="20,1 40,40 1,40" />
-                <text fill="#81cddd" x="5" y="47">Loading...</text>
+                <text fill="#81cddd" x="5" y="47">Sports-Saga</text>
             </svg>
             
         </div>

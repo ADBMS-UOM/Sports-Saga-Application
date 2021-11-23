@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
+import Logo from  "../../images/logo.png"
 
 const Header = () => {
   return (
@@ -10,12 +11,14 @@ const Header = () => {
             bg-light justify-content-between align-middle"
       >
         <Link to="/" className="logo">
+        <img src={Logo} className="navbar-logo"/>
           <h1
             className="navbar-brand text-uppercase p-0 m-0"
             onClick={() => window.scrollTo({ top: 0 })}
           >
             Sports Saga
           </h1>
+          
         </Link>
 
         <Menu />
