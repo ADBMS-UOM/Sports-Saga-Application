@@ -99,7 +99,6 @@ const StatusModal = () => {
         dispatch(createPost({ content, images, auth, socket }));
       }
       console.log("created post")
-
     }
 
 

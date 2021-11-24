@@ -23,8 +23,7 @@ import SocketClient from "./SocketClient";
 
 import { getNotifies } from "./redux/actions/notifyAction";
 import Peer from "peerjs";
-
-
+import { getAds } from "./redux/actions/adAction";
 
 function App() {
   const { auth, status, modal, userType } = useSelector((state) => state);
@@ -41,6 +40,7 @@ function App() {
   useEffect(() => {
     if (auth.token) {
       dispatch(getPosts(auth.token));
+      dispatch(getAds(auth.token));
       dispatch(getSuggestions(auth.token));
       dispatch(getNotifies(auth.token));
     }
@@ -80,7 +80,7 @@ function App() {
 
           <Route exact path="/" component={auth.token ? Home : Login} />
           <Route exact path="/register" component={Register} />
-   
+
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
         </div>
