@@ -206,16 +206,17 @@ const adCtrl = {
         _id: req.params.id,
         user: req.user._id,
       });
-      await Comments.deleteMany({ _id: { $in: post.comments } });
-
+      // await Comments.deleteMany({ _id: { $in: post.comments } });
+      console.log("Ad Deleted 111");
       res.json({
-        msg: "Deleted Post!",
+        msg: "Deleted Ad!",
         newPost: {
           ...post,
           user: req.user,
         },
       });
     } catch (err) {
+      console.log(err.message);
       return res.status(500).json({ msg: err.message });
     }
   },

@@ -201,9 +201,9 @@ export const deleteAd =
       // Notify
       const msg = {
         id: post._id,
-        text: "added a new post.",
+        text: "Delete advertisement.",
         recipients: res.data.newPost.user.followers,
-        url: `/post/${post._id}`,
+        url: `/ad/${post._id}`,
       };
       dispatch(removeNotify({ msg, auth, socket }));
     } catch (err) {
