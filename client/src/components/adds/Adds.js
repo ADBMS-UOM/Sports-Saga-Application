@@ -27,9 +27,13 @@ const Adds = () => {
 
   return (
     <div className="posts">
-      {homePosts.posts.map((post) => (
-        <AdCard key={post._id} post={post} theme={theme} />
-      ))}
+      <div class="row">
+        
+          {homePosts.posts.map((post) => (
+            <AdCard key={post._id} post={post} theme={theme} />
+          ))}
+
+      </div>
 
       {load && <img src={LoadIcon} alt="loading" className="d-block mx-auto" />}
 
