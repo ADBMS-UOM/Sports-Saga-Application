@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { GLOBALTYPES } from "../redux/actions/globalTypes";
 import { createPost, updatePost } from "../redux/actions/postAction";
+import { createNews, updateNews } from "../redux/actions/newsAction";
 import Icons from "./Icons";
 import { imageShow, videoShow } from "../utils/mediaShow";
 import { createAd, updateAd } from "../redux/actions/adAction";
@@ -92,14 +93,20 @@ const StatusModal = () => {
         dispatch(createAd({ content, images, auth, socket }));
       }
       console.log("created add");
-    } else {
+    } else if (window.location.pathname === "/news") {
+      if (status.onEdit) {
+        dispatch(updateNews({ content, images, auth, status }));
+      } else {
+        dispatch(createNews({ content, images, auth, socket }));
+      }
+      console.log("created news");
+    }else {
       if (status.onEdit) {
         dispatch(updatePost({ content, images, auth, status }));
       } else {
         dispatch(createPost({ content, images, auth, socket }));
       }
       console.log("created post")
-
     }
 
 

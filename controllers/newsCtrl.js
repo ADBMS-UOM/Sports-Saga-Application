@@ -17,7 +17,7 @@ class APIfeatures {
   }
 }
 
-const adCtrl = {
+const newsCtrl = {
   createNews: async (req, res) => {
     try {
       const { content, images } = req.body;
@@ -33,7 +33,7 @@ const adCtrl = {
       await newPost.save();
 
       res.json({
-        msg: "Created Ad!",
+        msg: "Created News!",
         newPost: {
           ...newPost._doc,
           user: req.user,
@@ -224,4 +224,4 @@ const adCtrl = {
 
 };
 
-module.exports = adCtrl;
+module.exports = newsCtrl;
