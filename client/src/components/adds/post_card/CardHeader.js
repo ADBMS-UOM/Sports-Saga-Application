@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { GLOBALTYPES } from "../../../redux/actions/globalTypes";
-import { deletePost } from "../../../redux/actions/postAction";
+import { deleteAd } from "../../../redux/actions/adAction";
 import { BASE_URL } from "../../../utils/config";
 
 const CardHeader = ({ post }) => {
@@ -19,7 +19,7 @@ const CardHeader = ({ post }) => {
 
   const handleDeletePost = () => {
     if (window.confirm("Are you sure want to delete this post?")) {
-      dispatch(deletePost({ post, auth, socket }));
+      dispatch(deleteAd({ post, auth, socket }));
       return history.push("/");
     }
   };
