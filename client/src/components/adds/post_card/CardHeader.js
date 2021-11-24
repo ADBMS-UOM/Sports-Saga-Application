@@ -49,22 +49,23 @@ const CardHeader = ({ post }) => {
         <span className="material-icons" id="moreLink" data-toggle="dropdown">
           more_horiz
         </span>
-        {auth.user.role === "admin" ? (
-          <>
-          <div className="dropdown-item" onClick={handleEditPost}>
-            <span className="material-icons">create</span> Edit Post
+        <div className="dropdown-menu">
+          {auth.user.role === "admin" ? (
+            <>
+              <div className="dropdown-item" onClick={handleEditPost}>
+                <span className="material-icons">create</span> Edit Post
+              </div>
+              <div className="dropdown-item" onClick={handleDeletePost}>
+                <span className="material-icons">delete_outline</span> Remove
+                Post
+              </div>
+            </>
+          ) : null}
+          <div className="dropdown-item" onClick={handleCopyLink}>
+            <span className="material-icons">content_copy</span> Copy Link
           </div>
-          <div className="dropdown-item" onClick={handleDeletePost}>
-            <span className="material-icons">delete_outline</span> Remove Post
-          </div>
-          </>
-        ) : null}
-        <div className="dropdown-item" onClick={handleCopyLink}>
-          <span className="material-icons">content_copy</span> Copy Link
         </div>
-
       </div>
-
     </div>
   );
 };
