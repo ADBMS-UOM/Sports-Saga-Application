@@ -10,6 +10,7 @@ import Register from "./pages/register";
 
 import Alert from "./components/alert/Alert";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import StatusModal from "./components/StatusModal";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -84,7 +85,9 @@ function App() {
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
         </div>
+        <Footer/>
       </div>
+
     </Router>
   );
 }
