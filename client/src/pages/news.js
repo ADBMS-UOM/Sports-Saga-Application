@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 
-import AddsStatus from "../components/adds/AddsStatus";
-import Adds from "../components/adds/Adds";
+import NewsStatus from "../components/news/NewsStatus";
+import News from "../components/news/News";
 
 import { useSelector } from "react-redux";
 import LoadIcon from "../images/loading.gif";
 
 let scroll = 0;
 
-const News = () => {
+const Newses = () => {
   const { homePosts, auth  } = useSelector((state) => state);
  
   window.addEventListener("scroll", () => {
@@ -28,18 +28,18 @@ const News = () => {
       
     <div className="home row mx-0">
       <div className="col-md-12">
-      {auth.user.role === "admin"?   <AddsStatus /> :null }
+      {auth.user.role === "admin"?   <NewsStatus /> :null }
       
         {homePosts.loading ? (
           <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
         ) : homePosts.result === 0 && homePosts.posts.length === 0 ? (
           <h2 className="text-center">No News</h2>
         ) : (
-          <Adds />
+          <News />
         )}
       </div>
     </div>
   );
 };
 
-export default News;
+export default Newses;

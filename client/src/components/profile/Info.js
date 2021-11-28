@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Avatar from "../Avatar";
 import EditProfile from "./EditProfile";
-import FollowBtn from "../FollowBtn";
-import Followers from "./Followers";
-import Following from "./Following";
+
 import { GLOBALTYPES } from "../../redux/actions/globalTypes";
 
 const Info = ({ id, auth, profile, dispatch }) => {
@@ -43,9 +41,7 @@ const Info = ({ id, auth, profile, dispatch }) => {
                 >
                   Edit Profile
                 </button>
-              ) : (
-                <FollowBtn user={user} />
-              )}
+              ) : null}
             </div>
 
             <h6>

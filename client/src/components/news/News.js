@@ -5,9 +5,9 @@ import LoadIcon from "../../images/loading.gif";
 import LoadMoreBtn from "../LoadMoreBtn";
 import { getDataAPI } from "../../utils/fetchData";
 import { POST_TYPES } from "../../redux/actions/adAction";
-import AdCard from "./AdCard";
+import NewsCard from "./NewsCard";
 
-const Adds = () => {
+const News = () => {
   const { homePosts, auth, theme } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -27,13 +27,9 @@ const Adds = () => {
 
   return (
     <div className="posts">
-      <div class="row">
-        
-          {homePosts.posts.map((post) => (
-            <AdCard key={post._id} post={post} theme={theme} />
-          ))}
-
-      </div>
+      {homePosts.posts.map((post) => (
+        <NewsCard key={post._id} post={post} theme={theme} />
+      ))}
 
       {load && <img src={LoadIcon} alt="loading" className="d-block mx-auto" />}
 
@@ -47,4 +43,4 @@ const Adds = () => {
   );
 };
 
-export default Adds;
+export default News;

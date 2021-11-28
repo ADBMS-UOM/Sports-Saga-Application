@@ -4,8 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { GLOBALTYPES } from "../../../redux/actions/globalTypes";
-import { deleteAd } from "../../../redux/actions/adAction";
 import { BASE_URL } from "../../../utils/config";
+import { deleteNews } from "../../../redux/actions/newsAction";
 
 const CardHeader = ({ post }) => {
   const { auth, socket } = useSelector((state) => state);
@@ -19,8 +19,8 @@ const CardHeader = ({ post }) => {
 
   const handleDeletePost = () => {
     if (window.confirm("Are you sure want to delete this post?")) {
-      dispatch(deleteAd({ post, auth, socket }));
-      return history.push("/");
+      dispatch(deleteNews({ post, auth, socket }));
+      return history.push("/news");
     }
   };
 
@@ -49,23 +49,22 @@ const CardHeader = ({ post }) => {
         <span className="material-icons" id="moreLink" data-toggle="dropdown">
           more_horiz
         </span>
-        <div className="dropdown-menu">
-          {auth.user.role === "admin" ? (
-            <>
-              <div className="dropdown-item" onClick={handleEditPost}>
-                <span className="material-icons">create</span> Edit Post
-              </div>
-              <div className="dropdown-item" onClick={handleDeletePost}>
-                <span className="material-icons">delete_outline</span> Remove
-                Post
-              </div>
-            </>
-          ) : null}
-          <div className="dropdown-item" onClick={handleCopyLink}>
-            <span className="material-icons">content_copy</span> Copy Link
+        {auth.user.role === "admin" ? (
+          <>
+          <div className="dropdown-item" onClick={handleEditPost}>
+            <span className="material-icons">create</span> Edit Post
           </div>
+          <div className="dropdown-item" onClick={handleDeletePost}>
+            <span className="material-icons">delete_outline</span> Remove Post
+          </div>
+          </>
+        ) : null}
+        <div className="dropdown-item" onClick={handleCopyLink}>
+          <span className="material-icons">content_copy</span> Copy Link
         </div>
+
       </div>
+
     </div>
   );
 };

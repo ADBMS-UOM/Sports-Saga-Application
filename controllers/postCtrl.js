@@ -207,7 +207,7 @@ const postCtrl = {
         user: req.user._id,
       });
       await Comments.deleteMany({ _id: { $in: post.comments } });
-
+      // console.log("Post Deleted 111");
       res.json({
         msg: "Deleted Post!",
         newPost: {
