@@ -45,6 +45,8 @@ img {
   object-fit: cover;
 }
 
+/* -------- Ad ---------- */
+@import url("./AdCard.css");
 /* -------- AUTH ---------- */
 @import url("./auth.css");
 
@@ -59,6 +61,9 @@ img {
 
 /* -------- Header ---------- */
 @import url("./header.css");
+
+/* -------- Footer ---------- */
+@import url("./footer.css");
 
 /* -------- Profile ---------- */
 @import url("./profile.css");
